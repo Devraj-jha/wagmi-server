@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// POST /wagmi
+
 app.post('/wagmi', (req, res) => {
   const { a, b } = req.body || {};
 
-  // If empty body, return echo message
+
   if (Object.keys(req.body).length === 0) {
     return res.json({
       message: 'wagmi',
@@ -17,7 +17,7 @@ app.post('/wagmi', (req, res) => {
     });
   }
 
-  // Validation
+
   if (typeof a !== 'number' || typeof b !== 'number') {
     return res.status(400).json({ error: 'Invalid input' });
   }
@@ -26,7 +26,6 @@ app.post('/wagmi', (req, res) => {
     return res.status(400).json({ error: 'Invalid input' });
   }
 
-  // Valid response
   return res.json({
     result: a + b,
     a: a,
