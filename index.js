@@ -33,6 +33,10 @@ app.post('/wagmi', (req, res) => {
     status: 'success'
   });
 });
+app.get('/', (req, res) => {
+  res.send('Hey Guys This is the wagmi server. plz Use POST /wagmi to use.');
+});
+
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
