@@ -42,6 +42,8 @@ app.post('/wagmi', (req, res) => {
 app.get('/', (req, res) => {
   res.send('Hey, This is the wagmi server. plz Use POST /wagmi to use.');
 });
+app.get('/favicon.ico', (req, res) => res.status(204));
+
 
 
 app.listen(port, '0.0.0.0', () => {
