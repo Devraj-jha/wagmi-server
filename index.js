@@ -34,7 +34,7 @@ app.post('/wagmi', (req, res) => {
   });
 });
 app.get('/', (req, res) => {
-  res.send('Hey Guys This is the wagmi server. plz Use POST /wagmi to use.');
+  res.send('Hey, This is the wagmi server. plz Use POST /wagmi to use.');
 });
 
 
